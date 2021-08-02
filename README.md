@@ -27,3 +27,9 @@ What mint_test2.js does:
     With this, test 7 should return the balance of walletD with 1,000,050,000,000.  It is returning 1,000,050,002,500 (converted from hexidecimal)
 
     This is, of course, throwing off tests 8 and 9, which transfer 1 million coins between walletC and walletB, and check the reflection on walletD.
+    
+    1,000,050,002,500 is correct value.
+    
+    safemoon's reflection algorithm doesn't calculate exact value.
+    it's a little different from expected value but the difference can be ignored since decimals is 9.
+    Anyway, the totalsupply is at least the sum of wallet's balance.
