@@ -111,13 +111,6 @@ contract('REFLECT.sol', async (accounts) => {
     // Logic for storing reflection value
     distAmnt = (oneT * tax);
 
-    // Calculate percentage of total supply held by wallet
-    let perc = beforeDSupply.toNumber() / totalSupply.toNumber();
-
-    let final = beforeDSupply.toNumber() + (distAmnt * perc);
-    console.log('balance before: ', beforeDSupply.toNumber());
-    console.log('amount added: ', distAmnt * perc);
-
     // Get balance of walletD address
     let DSupply = await config.reflect.balanceOf.call(walletD, {from: config.owner});
     let ASupply = await config.reflect.balanceOf.call(config.owner, {from: config.owner});
@@ -131,7 +124,6 @@ contract('REFLECT.sol', async (accounts) => {
 
     let sum = ASupply.toNumber() + BSupply.toNumber() + CSupply.toNumber() + DSupply.toNumber();
 
-    // Use Math.floor() to simulate Solidity's natural rounding down of decimals
     assert.isAtLeast(totalSupply.toNumber(), sum, "Totalsupply should be greater or equal to sum of 4 wallets");
   
   });
