@@ -699,9 +699,8 @@ contract SafeMoon is Context, IERC20, Ownable {
     address[] private _excluded;
    
     uint256 private constant MAX = ~uint256(0);
-    uint256 private _tTotal = 1000000 * 10**9;
-    uint256 private constant maxVal = 1000000 * 10**9 * 10**9;
-    uint256 private _rTotal = (maxVal - (maxVal % _tTotal));
+    uint256 private _tTotal;
+    uint256 private _rTotal;
     uint256 private _tFeeTotal;
 
     string private _name = "SafeMoon";
@@ -738,6 +737,9 @@ contract SafeMoon is Context, IERC20, Ownable {
     }
     
     constructor () public {
+        _tTotal = 1000000 * 10**9;
+        _rTotal = 11579208923731619542357098500868790785326998466564056403945758 * 10**6 * 10**9;
+        
         _rOwned[_msgSender()] = _rTotal;
         
         // IUniswapV2Router02 _uniswapV2Router = IUniswapV2Router02(0x52530AeEcd4574b880924b3FAFa16c0B6b081329);

@@ -34,6 +34,7 @@ contract('REFLECT.sol', async (accounts) => {
     // Get total token supply(in contract)
     originalSupply = await config.reflect.totalSupply.call({from: config.owner});
     // Total supply should be 1 quadrillion, or 1,000,000,000,000,000
+    console.log(`TotalSupply : ${originalSupply}`);
     assert.equal(originalSupply, 1000000000000000, "Fetches the total coin supply");
 
   });
@@ -46,8 +47,10 @@ contract('REFLECT.sol', async (accounts) => {
     await config.reflect.mint(walletB, oneT, {from: config.owner});
     // Find new expected supply
     let newSupply = originalSupply.toNumber() + oneT;
+    console.log(`NEW supply : ${newSupply}`);
     // Find actual current supply
     totalSupply = await config.reflect.totalSupply.call({from: config.owner});
+    console.log(`TotalSupply : ${totalSupply}`);
     // total supply should be totalSupply + oneT
     assert.equal(totalSupply, newSupply, "New amount after first mint to walletB");
 
