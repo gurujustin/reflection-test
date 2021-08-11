@@ -22,7 +22,7 @@ contract('REFLECT.sol', async (accounts) => {
 
     // Get token name
     let getName = await config.reflect.name.call({from: config.owner});
-    assert.equal(getName, "SafeMoon", "Fetches name of coin from contract");
+    assert.equal(getName, "DApp Token", "Fetches name of coin from contract");
 
   });
 
@@ -57,7 +57,7 @@ contract('REFLECT.sol', async (accounts) => {
     let bSupply = await config.reflect.balanceOf.call(config.testAddresses[1], {from: config.owner});
     // Wallet B's new balance
     console.log(bSupply.toString())
-    assert.equal(bSupply, 404040404040404, "B balance is 40% (+reflection)");
+    assert.equal(bSupply, 404000000000000, "B balance is 40% (+reflection)");
 
   });
 
@@ -67,7 +67,7 @@ contract('REFLECT.sol', async (accounts) => {
     let cSupply = await config.reflect.balanceOf.call(config.testAddresses[2], {from: config.owner});
     // Wallet C's new balance
     console.log(cSupply.toString())
-    assert.equal(cSupply, 191919191919191, "C balance is 20% (less 5%)");
+    assert.equal(cSupply, 191900000000000, "C balance is 20% (less 5%)");
   });
 
   it(`6. Check that owner recieved reflection`, async function () {
@@ -76,7 +76,7 @@ contract('REFLECT.sol', async (accounts) => {
     ownerSupply = await config.reflect.balanceOf.call(config.owner, {from: config.owner});
     // owner's new balance
     console.log(ownerSupply.toString())
-    assert.equal(ownerSupply, 404040404040404, "Owner balance is 40% (+reflection)");
+    assert.equal(ownerSupply, 404000000000000, "Owner balance is 40% (+reflection)");
 
   });
   

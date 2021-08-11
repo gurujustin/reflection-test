@@ -123,7 +123,7 @@ contract('REFLECT.sol', async (accounts) => {
     console.log('WalletD: ', DSupply.toNumber());
 
     let sum = ASupply.toNumber() + BSupply.toNumber() + CSupply.toNumber() + DSupply.toNumber();
-
+    console.log('sum: ', sum)
     assert.isAtLeast(totalSupply.toNumber(), sum, "Totalsupply should be greater or equal to sum of 4 wallets");
   
   });

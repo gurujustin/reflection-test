@@ -1,4 +1,4 @@
-const reflect = artifacts.require("Safemoon");
+const reflect = artifacts.require("DappToken");
 
 module.exports = function(deployer) {
 
