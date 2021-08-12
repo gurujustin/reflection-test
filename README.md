@@ -1,5 +1,7 @@
 ## Reflection token(different from SAFEMOON)
 
+I refered this blog. https://weka.medium.com/dividend-bearing-tokens-on-ethereum-42d01c710657
+
 Notes for running dev environment:
 
 From reflect-project file:
