@@ -1,4 +1,4 @@
-##Reflection token(different from SAFEMOON)
+## Reflection token(different from SAFEMOON)
 
 Notes for running dev environment:
 
