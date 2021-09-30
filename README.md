@@ -16,4 +16,4 @@ truffle test
 
 (If all is well, truffle should run one test, and it should pass.  It just calls the name() function and compares the returned value with the expected value.)
 
-mocha test
+mocha test(truffle)
